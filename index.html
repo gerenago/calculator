@@ -2,31 +2,39 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
 <body>
-    <div class="display">
-        02497503406
+    <div id="display">
+        
     </div>
-    <div class="numbers">
-        <button class="zero">0</button>
-        <button class="one">1</button>
-        <button class="two">2</button>
-        <button class="three">3</button>
-        <button class="four">4</button>
-        <button class="five">5</button>
-        <button class="six">6</button>
-        <button class="seven">7</button>
-        <button class="eight">8</button>
-        <button class="nine">9</button>
+    <div id="numbers">
+        <button class="number" value="0">0</button>
+        <button class="number" value="1">1</button>
+        <button class="number" value="2">2</button>
+        <button class="number" value="3">3</button>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="number" value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
     </div>
     <div class="operators">
-        <button class="add">+</button>
-        <button class="subtract">-</button>
-        <button class="multiply">x</button>
-        <button class="divide">/</button>
-        <button class="equals">=</button>
-        <script src="javascript.js"></script>
+        <button class="operator" value="add">+</button>
+        <button class="operator" value="subtract">-</button>
+        <button class="operator" value="multiply">x</button>
+        <button class="operator" value="divide">/</button>
+        <button class="operator" value="equals">=</button>
     </div>
+    <div class="clear">
+        <button class="clear">Clear</button>
+    </div>
+
+
+
+    <script src="javascript.js"></script>
+
 </body>
 </html>

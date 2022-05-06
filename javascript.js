@@ -19,10 +19,23 @@ function operate (operator, initialInput, nextInput) {
         case 'add' :
             return add(initialInput, nextInput)
         case 'substract' :
-            return substract(initialInput, nextInput)
+            return subtract(initialInput, nextInput)
         case 'multiply' :
             return multiply(initialInput, nextInput)
         case 'divide' :
             return divide(initialInput, nextInput)
     }
 };
+const numbers = document.querySelectorAll('.number');
+numbers.forEach((number) => {
+    number.addEventListener('click', () => {
+        const display = document.querySelector('#display');
+        display.textContent = `${number.value}`;
+    })
+});
+const operators = document.querySelectorAll('.operator');
+operators.forEach((operator) => {
+    operator.addEventListener('click', () => {
+        return operator.value;
+    })
+});
