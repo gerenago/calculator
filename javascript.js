@@ -17,16 +17,12 @@ function divide (initialInput, nextInput) {
 function operate (operator, initialInput, nextInput) {
     switch(operator) {
         case 'add' :
-            add(initialInput, nextInput)
-            break;
+            return add(initialInput, nextInput)
         case 'substract' :
-            substract(initialInput, nextInput)
-            break;
+            return substract(initialInput, nextInput)
         case 'multiply' :
-            multiply(initialInput, nextInput)
-            break;
+            return multiply(initialInput, nextInput)
         case 'divide' :
-            divide(initialInput, nextInput)
-            break;
+            return divide(initialInput, nextInput)
     }
 };
