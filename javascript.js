@@ -16,6 +16,14 @@ const backspace = document.querySelector('.backspace');
 
 //when operator is clicked, pass number to oldnum and save operator
 numbers.forEach(number => number.addEventListener('click', numberClicked));
+//numbers.forEach(function(number) {
+   // window.addEventListener('keydown', function (e) {
+       // if (e.key = number.value) {
+           // numberClicked();
+       // }
+   // })
+//});
+//if pressed key is equal to any of the number.values, run numberClicked
 
 function numberClicked () {
     if (currentInput.includes('.') == true) {
