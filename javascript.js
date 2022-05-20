@@ -47,21 +47,28 @@ function displayInput () {
     display.textContent = `${currentInput}`;
 }
 
+function roundResult () {
+    currentInput = Math.round((currentInput + Number.EPSILON) * 10000) / 10000;
+}
+
 function operate () {
     switch(calcOperator) {
         case "add" :
             integer()
             currentInput = initialInput + currentInput;
+            roundResult()
             displayInput()
             break;
         case "subtract" :
             integer()
             currentInput = initialInput - currentInput;
+            roundResult ()
             displayInput()
             break;
         case "multiply" :
             integer()
             currentInput = initialInput * currentInput;
+            roundResult()
             displayInput()
             break;
         case "divide" :
@@ -70,6 +77,7 @@ function operate () {
             } else {   
                 integer()
                 currentInput = initialInput / currentInput;
+                roundResult()
                 displayInput()
             }
             break;
