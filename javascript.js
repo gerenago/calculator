@@ -17,6 +17,9 @@ const clear = document.querySelector('.clear');
 numbers.forEach(number => number.addEventListener('click', numberClicked));
 
 function numberClicked () {
+    if (currentInput.includes('.') == true) {
+        document.getElementById("decimal").disabled = true;
+    }
     currentInput += this.value;
     displayInput();
 };
@@ -26,6 +29,7 @@ function moveNum () {
     initialInput = currentInput;
     currentInput = '';
     calcOperator = this.value;
+    document.getElementById("decimal").disabled = false;
 };
 
 equals.addEventListener('click', operate);
@@ -39,8 +43,8 @@ clear.addEventListener('click', function() {
 
 //operations
 function integer () {
-    initialInput = parseInt(initialInput);
-    currentInput = parseInt(currentInput);
+    initialInput = Number(initialInput);
+    currentInput = Number(currentInput);
 };
 
 function displayInput () {
