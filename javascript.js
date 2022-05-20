@@ -52,6 +52,9 @@ function roundResult () {
 }
 
 function operate () {
+    if (currentInput == "") {
+        display.textContent = `${initialInput}`;
+    } else {
     switch(calcOperator) {
         case "add" :
             integer()
@@ -81,6 +84,7 @@ function operate () {
                 displayInput()
             }
             break;
+        }
     }
     
 };
