@@ -18,7 +18,7 @@ numbers.forEach(number => number.addEventListener('click', numberClicked));
 
 function numberClicked () {
     currentInput += this.value;
-    display.textContent = `${currentInput}`;
+    displayInput();
 };
 
 operators.forEach(operator => operator.addEventListener('click', moveNum));
@@ -34,33 +34,45 @@ clear.addEventListener('click', function() {
     initialInput = '';
     currentInput = '';
     calcOperator = '';
-    display.textContent = `${currentInput}`;
+    displayInput();
 })
 
 //operations
+function integer () {
+    initialInput = parseInt(initialInput);
+    currentInput = parseInt(currentInput);
+};
+
+function displayInput () {
+    display.textContent = `${currentInput}`;
+}
 
 function operate () {
     switch(calcOperator) {
         case "add" :
-            initialInput = parseInt(initialInput);
-            currentInput = parseInt(currentInput);
+            integer()
             currentInput = initialInput + currentInput;
+            displayInput()
             break;
         case "subtract" :
-            initialInput = parseInt(initialInput);
-            currentInput = parseInt(currentInput);
+            integer()
             currentInput = initialInput - currentInput;
+            displayInput()
             break;
         case "multiply" :
-            initialInput = parseInt(initialInput);
-            currentInput = parseInt(currentInput);
+            integer()
             currentInput = initialInput * currentInput;
+            displayInput()
             break;
         case "divide" :
-            initialInput = parseInt(initialInput);
-            currentInput = parseInt(currentInput);
-            currentInput = initialInput / currentInput;
+            if (currentInput == "0") {
+                display.textContent = `invalid`;
+            } else {   
+                integer()
+                currentInput = initialInput / currentInput;
+                displayInput()
+            }
             break;
     }
-    display.textContent = `${currentInput}`;
+    
 };
