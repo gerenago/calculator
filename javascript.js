@@ -12,6 +12,7 @@ const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
+const backspace = document.querySelector('.backspace');
 
 //when operator is clicked, pass number to oldnum and save operator
 numbers.forEach(number => number.addEventListener('click', numberClicked));
@@ -38,14 +39,26 @@ clear.addEventListener('click', function() {
     initialInput = '';
     currentInput = '';
     calcOperator = '';
+    document.getElementById("decimal").disabled = false;
     displayInput();
 })
 
+backspace.addEventListener('click', deleteNumber);
+
 //operations
+function deleteNumber () {
+    if (currentInput == "") {
+        display.textContent = `${initialInput}`;
+    } else {
+    currentInput = currentInput.slice(0,-1);
+    displayInput();
+    }
+}
+
 function integer () {
     initialInput = Number(initialInput);
     currentInput = Number(currentInput);
-};
+}
 
 function displayInput () {
     display.textContent = `${currentInput}`;
@@ -91,4 +104,4 @@ function operate () {
         }
     }
     
-};
+}
