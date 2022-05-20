@@ -11,6 +11,7 @@ const display = document.querySelector('#display');
 const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
+const clear = document.querySelector('.clear');
 
 //when operator is clicked, pass number to oldnum and save operator
 numbers.forEach(number => number.addEventListener('click', numberClicked));
@@ -28,6 +29,13 @@ function moveNum () {
 };
 
 equals.addEventListener('click', operate);
+
+clear.addEventListener('click', function() {
+    initialInput = '';
+    currentInput = '';
+    calcOperator = '';
+    display.textContent = `${currentInput}`;
+})
 
 //operations
 
